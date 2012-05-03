@@ -10,4 +10,7 @@
 
 @interface loginView : UIView
 
+-(IBAction)doLogin:(id)sender;
+- (IBAction)doRegister:(id)sender;
+
 @end

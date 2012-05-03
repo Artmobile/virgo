@@ -7,6 +7,7 @@
 //
 
 #import "loginView.h"
+#import "virgoAppDelegate.h"
 
 @implementation loginView
 
@@ -18,6 +19,28 @@
     }
     return self;
 }
+
+- (IBAction)doLogin:(id)sender {
+    virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
+    
+    [mainDelegate flipBack];
+}
+
+- (IBAction)doRegister:(id)sender {
+    virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
+    createUserViewController* user = [[createUserViewController alloc] initWithNibName:@"createUserViewController" bundle:nil];
+    
+    [mainDelegate flipForward:(UIViewController*)user];
+}
+
+/*
+
+- (IBAction)onGoBack:(id)sender{
+    virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
+    
+    [mainDelegate flipBack];
+}
+*/
 
 /*
 // Only override drawRect: if you perform custom drawing.

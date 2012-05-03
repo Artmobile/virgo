@@ -17,10 +17,11 @@
 @synthesize window = _window;
 @synthesize viewController = _viewController;
 @synthesize loginViewController = _loginController;
+@synthesize forgotPasswordViewController = forgotPasswordController;
+@synthesize createUserViewController = _createUserController;
 @synthesize textColor = _textColor;
 @synthesize history = _history;
 @synthesize currentViewController = _current;
-
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -31,6 +32,7 @@
 
     // Make sure that _viewController is always at the bottom of the history stack so we
     // can always get back to it
+    _history = [[NSMutableArray alloc]init];
     [_history push:_viewController];
     _current = _viewController;
     
@@ -72,19 +74,14 @@
         cache = [_history objectAtIndex:0];
     else
         cache = (UIViewController*)[_history pop];
-
+    
     
 	[_current.view removeFromSuperview];
     
 	[self.window addSubview:[cache view]];
 	[UIView commitAnimations];
     
-	[_current release];
-	_current = nil;  
-    
     _current = cache;
-    
-    [cache release];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
