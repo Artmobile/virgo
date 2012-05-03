@@ -33,7 +33,7 @@
 
 - (IBAction)tellDelegateToFlipViews:(id)sender{
     virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
-    loginViewController* login = [[loginViewController alloc] initWithNibName:@"LoginView" bundle:nil];
+    loginViewController* login = [[loginViewController alloc] initWithNibName:@"loginViewController" bundle:nil];
     
     [mainDelegate flipForward:(UIViewController*)login];
 }

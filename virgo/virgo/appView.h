@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface appView : UIView
+@interface appView : UIView{
+    IBOutlet UILabel *theLabel;
+    
+}
+
+- (IBAction)sayHi:(id)sender;
+- (IBAction)tellDelegateToFlipViews:(id)sender;
+
+@property (nonatomic, retain) UILabel* theLabel;
 
 @end

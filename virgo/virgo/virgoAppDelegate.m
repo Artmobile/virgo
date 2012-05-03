@@ -44,7 +44,7 @@
         [NSException  raise:@"Can't flip to origin" format:@"The destination object was the same as _viewController. Can only flipBack to this controller"];
     
     [UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:2.0];
+	[UIView setAnimationDuration:0.3];
     
     // Since the from object was passed to us, we'll remember and cache it
     [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:window cache:YES];
@@ -63,7 +63,7 @@
 
 - (void) flipBack {
     [UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:2.0];
+	[UIView setAnimationDuration:0.3];
 	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:window cache:NO];
     
     UIViewController* cache;
