@@ -39,28 +39,23 @@
     return YES;
 }
 
-- (void) flipForward: (UIViewController*) to andFrom: (UIViewController*) from {
+- (void) flipForward: (UIViewController*) to {
     if(to == _viewController)
         [NSException  raise:@"Can't flip to origin" format:@"The destination object was the same as _viewController. Can only flipBack to this controller"];
     
     [UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:2.0];
     
-    if(from != Nil){
-        // Since the from object was passed to us, we'll remember and cache it
-        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:window cache:YES];
-        
-        // We'll cache the object which we come from. We do not cache the object that we are going to until next flip   
-        [_history push: from];
-    }
-    else{
-        // We'll 
-        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:window cache:NO];
-    }
+    // Since the from object was passed to us, we'll remember and cache it
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:window cache:YES];
     
+    // We'll cache the object which we come from. We do not cache the object that we are going to until next flip   
+    if(_current != _viewController)
+        [_history push: _current];
+
+    [_current.view removeFromSuperview];
     _current = to;
     
-	[from.view removeFromSuperview];
 	[self.window addSubview:[to view]];
 	[UIView commitAnimations];    
     
@@ -81,13 +76,15 @@
     
 	[_current.view removeFromSuperview];
     
-    _current = cache;
-    
 	[self.window addSubview:[cache view]];
 	[UIView commitAnimations];
     
-	[cache release];
-	cache = nil;  
+	[_current release];
+	_current = nil;  
+    
+    _current = cache;
+    
+    [cache release];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -133,6 +130,8 @@
 {
     [_window release];
     [_viewController release];
+    [_loginController release];
+    [textColor release];
     [super dealloc];
 }
 
