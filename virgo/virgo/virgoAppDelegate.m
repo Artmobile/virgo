@@ -19,6 +19,7 @@
 @synthesize loginViewController = _loginController;
 @synthesize forgotPasswordViewController = forgotPasswordController;
 @synthesize createUserViewController = _createUserController;
+@synthesize pillsViewController = _pillsController;
 @synthesize textColor = _textColor;
 @synthesize history = _history;
 @synthesize currentViewController = _current;

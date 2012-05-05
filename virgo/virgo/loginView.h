@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface loginView : UIView
+@interface loginView : UIView{
+    IBOutlet UITextField* txtPassword;
+    IBOutlet UITextField* txtUsername;
+}
 
--(IBAction)doLogin:(id)sender;
+- (IBAction)doLogin:(id)sender;
 - (IBAction)doRegister:(id)sender;
+- (IBAction)forgotPassword:(id)sender;
+
+@property (nonatomic, retain) UITextField* txtUsername;
+@property (nonatomic, retain) UITextField* txtPassword;
 
 @end

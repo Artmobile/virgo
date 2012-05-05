@@ -8,8 +8,12 @@
 
 #import "loginView.h"
 #import "virgoAppDelegate.h"
+#import "SecureJsonChannel.h"
 
 @implementation loginView
+
+@synthesize txtPassword;
+@synthesize txtUsername;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -21,9 +25,18 @@
 }
 
 - (IBAction)doLogin:(id)sender {
-    virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
+
+    // Perform the login
+    NSString* username = txtUsername.text;
+    NSString* password = txtPassword.text;
     
-    [mainDelegate flipBack];
+    
+    
+    virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
+    pillsViewController* user = [[pillsViewController alloc] initWithNibName:@"pillsViewController" bundle:nil];
+    
+    [mainDelegate flipForward:(UIViewController*)user];
+    
 }
 
 - (IBAction)doRegister:(id)sender {
@@ -31,6 +44,13 @@
     createUserViewController* user = [[createUserViewController alloc] initWithNibName:@"createUserViewController" bundle:nil];
     
     [mainDelegate flipForward:(UIViewController*)user];
+}
+
+- (IBAction)forgotPassword:(id)sender {
+    virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
+    forgotPasswordViewController* forgot = [[forgotPasswordViewController alloc] initWithNibName:@"forgotPasswordViewController" bundle:nil];
+    
+    [mainDelegate flipForward:(UIViewController*)forgot];
 }
 
 /*
