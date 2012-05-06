@@ -8,6 +8,8 @@
 
 #import "LoginManager.h"
 #import "JsonHelper.h"
+#import "virgoAppDelegate.h"
+#import "SecureJsonChannel.h"
 
 @implementation LoginManager
 
@@ -23,14 +25,21 @@
 
 
 + (NSString*) doLogin:(NSString*) username andPassword:(NSString*) password{
+    virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
+    NSString* _currentKey = [mainDelegate currentKey];
+    
     NSMutableDictionary* params = [[NSMutableDictionary alloc]init];
     
-    [params setObject:@"artmobile" forKey:@"userName"];
-    [params setObject:@"sixpens" forKey:@"password"];
+    [params setObject:username forKey:@"userName"];
+    [params setObject:password forKey:@"password"];
     
-    NSDictionary* result = [JsonHelper get:@"http://localhost:9001/securesocialajax/loginByUserPassword" params:params timeoutInterval:60.0];
+    NSDictionary* result = [JsonHelper get:@"http://localhost:9001/securesocialajax/login" params:params timeoutInterval:60.0];
     
-    return [result objectForKey:@"admin_id"];
+    NSString* data = [result objectForKey:@"data"];
+    
+    NSDictionary* dict = [SecureJsonChannel decryptDictionary:data password:_currentKey]; 
+    
+    return [dict objectForKey:@"admin_id"]; 
 }
 
 @end

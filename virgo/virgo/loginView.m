@@ -9,6 +9,7 @@
 #import "loginView.h"
 #import "virgoAppDelegate.h"
 #import "SecureJsonChannel.h"
+#import "LoginManager.h"
 
 @implementation loginView
 
@@ -30,13 +31,9 @@
     NSString* username = txtUsername.text;
     NSString* password = txtPassword.text;
     
-    
-    
-    virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
-    pillsViewController* user = [[pillsViewController alloc] initWithNibName:@"pillsViewController" bundle:nil];
-    
-    [mainDelegate flipForward:(UIViewController*)user];
-    
+
+    // Get admin_id from the Xodiac service
+    NSString* admin_id = [LoginManager doLogin:username andPassword:password];
 }
 
 - (IBAction)doRegister:(id)sender {
