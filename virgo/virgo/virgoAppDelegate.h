@@ -32,6 +32,7 @@
 @property (nonatomic, retain) NSMutableArray                *history;
 @property (nonatomic, retain) IBOutlet UIColor              *textColor;
 @property (nonatomic, retain) UIViewController              *currentViewController;
+@property (nonatomic, retain) NSString                      *currentKey;    
 
 
 // The method that will flip between the views

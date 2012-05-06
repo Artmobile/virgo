@@ -11,6 +11,7 @@
 #import "virgoViewController.h"
 #import "loginViewController.h"
 #import "NSStack.h"
+#import "SecureJsonChannel.h"
 
 @implementation virgoAppDelegate
 
@@ -23,7 +24,10 @@
 @synthesize textColor = _textColor;
 @synthesize history = _history;
 @synthesize currentViewController = _current;
+@synthesize currentKey = _currentKey;
 
+
+NSString* currentServer = @"http://localhost:9001";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -36,6 +40,21 @@
     _history = [[NSMutableArray alloc]init];
     [_history push:_viewController];
     _current = _viewController;
+    
+    
+    // Try to negotiate the current key from the dispatcher server
+    _currentKey = [SecureJsonChannel negotiateKey:currentServer];
+    if(_currentKey == Nil){
+        // Show the popup message that the server cannot be contacted and bail out
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communition error occurred" 
+														message:@"The dispatcher server cannot be contacted. The application will be closed"
+													   delegate:nil 
+											  cancelButtonTitle:@"OK" 
+											  otherButtonTitles: nil];        
+        [alert show];
+        [alert release];
+    }
+    
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
