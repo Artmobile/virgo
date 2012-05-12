@@ -25,8 +25,9 @@
     
 }
 
-- (NSDictionary*)connectAndLogin:(NSString*) server username:(NSString*)username password:(NSString*) password{
+- (NSDictionary*)connectAndLogin:(NSString*) server username:(NSString*)username password:(NSString*) password error:(NSError**) error{
     NSString* _currentKey;
+    NSError* err;
     
     virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
     
@@ -41,8 +42,10 @@
     [params setObject:username forKey:@"userName"];
     [params setObject:password forKey:@"password"];
     
-    NSDictionary* result = [SecureJsonChannel get: [NSString stringWithFormat: @"%@/securesocialajax/login", server] params:params andPassword:_currentKey];
+    NSDictionary* result = [SecureJsonChannel get: [NSString stringWithFormat: @"%@/securesocialajax/login", server] params:params andPassword:_currentKey error:&err];
 
+    *error = err;
+    
     return result;
 }
 
@@ -59,8 +62,19 @@
 - (void)testSecureLoginNoServer {
     NSString* currentServer = @"http://serverthatdoesnotexist:9001";
     
+    // Important! Reset error object before using it
+    NSError* error = Nil;
     
-    NSDictionary* result = [self connectAndLogin: currentServer username:@"test" password:@"test"];
+    NSDictionary* result = [self connectAndLogin: currentServer username:@"test" password:@"test" error:&error];
+    
+    // Check the error if not successfull
+    if(error){
+        switch(error.code){
+            case -1003:
+                NSLog(@"There was no connection");
+                break;
+        }
+    }
 }
 
 -(void)testBase64 {

@@ -41,13 +41,13 @@ NSString* currentServer = @"http://localhost:9001";
     [_history push:_viewController];
     _current = _viewController;
     
-    
+    NSError* err = Nil;
     // Try to negotiate the current key from the dispatcher server
-    _currentKey = [SecureJsonChannel negotiateKey:currentServer];
-    if(_currentKey == Nil){
+    _currentKey = [SecureJsonChannel negotiateKey:currentServer error:&err];
+    if(err){
         // Show the popup message that the server cannot be contacted and bail out
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communition error occurred" 
-														message:@"The dispatcher server cannot be contacted. The application will be closed"
+														message:[err localizedDescription]
 													   delegate:nil 
 											  cancelButtonTitle:@"OK" 
 											  otherButtonTitles: nil];        
