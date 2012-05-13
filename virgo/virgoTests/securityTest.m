@@ -53,10 +53,37 @@
     
     NSString* currentServer = @"http://localhost:9001";
     
+    // Important! Reset error object before using it
+    NSError* error = Nil;
 
-    NSDictionary* result = [self connectAndLogin: currentServer username:@"test" password:@"test"];
+    NSDictionary* result = [self connectAndLogin: currentServer username:@"test" password:@"test" error:&error];
     
+    // There should be no error - everything runs as expected
     NSString* admin_id = [result objectForKey:@"admin_id"]; 
+}
+
+- (void)testWrongLogin{
+    NSString* currentServer = @"http://localhost:9001";
+    // Important! Reset error object before using it
+    NSError* error = Nil;
+
+    NSDictionary* result = [self connectAndLogin: currentServer username:@"wrong" password:@"wrong" error:&error];
+    
+    STAssertNotNil(error, @"Wrong user and password were specified but error returned was Nil");
+    
+    if(error){
+        switch (error.code) {
+            case 7:
+                // TODO: Currently SecureAjax returns code 7 for invalid login. Must change it
+                NSLog(@"Failed to login user %@", @"wrong");
+                break;
+            case -1003:
+                STFail(@"There was no connection. Please check that the application is started at %@", currentServer);
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 - (void)testSecureLoginNoServer {
@@ -66,6 +93,8 @@
     NSError* error = Nil;
     
     NSDictionary* result = [self connectAndLogin: currentServer username:@"test" password:@"test" error:&error];
+    
+    STAssertEquals(error.code, -1003, @"Expected to recieve -1003 when there is no connection");
     
     // Check the error if not successfull
     if(error){
