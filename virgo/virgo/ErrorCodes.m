@@ -3,6 +3,7 @@
 
 NSString * const DOMAIN_XODIAC = @"org.xodiac";
 NSString * const DOMAIN_NSURLERRORDOMAIN = @"NSURLErrorDomain";
+NSString * const DOMAIN_AJAX_SECURELOGIN =  @"SecureSocialAjax.login";
 
 
 @implementation ErrorCodes

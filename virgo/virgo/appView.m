@@ -8,6 +8,7 @@
 
 #import "appView.h"
 #import "virgoAppDelegate.h"
+#import "loginViewController.h"
 
 @implementation appView
 

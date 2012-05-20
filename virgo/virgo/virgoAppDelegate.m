@@ -50,6 +50,8 @@
     NSError* err = Nil;
     // Try to negotiate the current key from the dispatcher server
     _currentKey = [SecureJsonChannel negotiateKey:_currentServer error:&err];
+    
+    /*
     if(err){
         // Show the popup message that the server cannot be contacted and bail out
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communition error occurred" 
@@ -60,6 +62,7 @@
         [alert show];
         [alert release];
     }
+    */
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];

@@ -15,7 +15,6 @@
 #import "ErrorCodes.h"
 #import "UserActivityManager.h"
 
-
 @implementation securityTest
 
 #if USE_APPLICATION_UNIT_TEST     // all code under test is in the iPhone Application
@@ -27,30 +26,6 @@
     
 }
 
-- (NSDictionary*)connectAndLogin:(NSString*) server username:(NSString*)username password:(NSString*) password error:(NSError**) error{
-    NSString* _currentKey;
-    NSError* err;
-    
-    virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
-    
-    if([mainDelegate currentKey] == Nil || mainDelegate.currentKey.length <=0){
-        _currentKey = [SecureJsonChannel negotiateKey:server error: &err];
-    }
-    else
-        _currentKey = [mainDelegate currentKey];
-    
-    NSMutableDictionary* params = [[NSMutableDictionary alloc]init];
-    
-    [params setObject:username forKey:@"userName"];
-    [params setObject:password forKey:@"password"];
-    
-    NSDictionary* result = [SecureJsonChannel get: [NSString stringWithFormat: @"%@/securesocialajax/login", server] params:params andPassword:_currentKey error:&err];
-
-    *error = err;
-    
-    return result;
-}
-
 - (void) testSecureLogin {
     
     NSString* currentServer = @"http://localhost:9001";
@@ -58,10 +33,24 @@
     // Important! Reset error object before using it
     NSError* error = Nil;
 
-    NSDictionary* result = [self connectAndLogin: currentServer username:@"test" password:@"test" error:&error];
+    NSString* admin_id =  [UserActivityManager doLogin:currentServer forUsername:@"test" forPassword:@"test" error:&error];   
     
-    // There should be no error - everything runs as expected
-    NSString* admin_id = [result objectForKey:@"admin_id"]; 
+    WITHIN_DOMAIN(error, DOMAIN_XODIAC)
+        case X_CODE_LOGIN_FAILED:
+            STFail(@"Username %@ was supposed to be able log in. Please check your test configuration", @"test");
+            break;
+        case X_CODE_NO_CONNECTION:
+            STFail(@"The test was failed because there is no connection to the server");
+            break;
+        default:
+            STFail(@"Unknown error occurred!");
+            break;
+    END_WITHIN_DOMAIN
+    
+    
+    STAssertNotNil(admin_id, @"Admin id was empty");
+    
+    NSLog(@"Admin_id was %@", admin_id);
 }
 
 - (void)testWrongLogin{
@@ -70,87 +59,60 @@
     // Important! Reset error object before using it
     NSError* error = Nil;
     
-//    NSString* admin_id =  [UserActivityManager doLogin:currentServer forUsername:@"wrong" forPassword:@"wrong" error:&error];   
-
-    
     NSString* admin_id =  [UserActivityManager doLogin:currentServer forUsername:@"wrong" forPassword:@"wrong" error:&error];   
-    
 
-    if(!error){
-        STFail("No error was return when wrong username and password were passed to the doLogin function");
-        return;
-    }
+    STAssertNotNil(admin_id, @"Admin id was returned not empty when using wrong credentials during login");
     
-    if(error){
-        if ( [[error domain] isEqualToString:DOMAIN_NSURLERRORDOMAIN] ) {
-            switch (error.code) {
-                case -1003:
-                    STFail(@"There was no connection. Please check that the application is started at %@", currentServer);
-                    break;
-                default:
-                    break;
-            }
-        }
-        else if ( [[error domain] isEqualToString:DOMAIN_XODIAC] ) {
-            switch (error.code) {
-                case X_CODE_LOGIN_FAILED:
-                    // TODO: Currently SecureAjax returns code 7 for invalid login. Must change it
-                    NSLog(@"Failed to login user %@", @"wrong");
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-    
-    /*
-    NSDictionary* result = [self connectAndLogin: currentServer username:@"wrong" password:@"wrong" error:&error];
-    
-    STAssertNotNil(error, @"Wrong user and password were specified but error returned was Nil");
-    
-    
-    if(error){
-        if ( [[error domain] isEqualToString:DOMAIN_NSURLERRORDOMAIN] ) {
-            switch (error.code) {
-                case -1003:
-                    STFail(@"There was no connection. Please check that the application is started at %@", currentServer);
-                    break;
-                default:
-                    break;
-            }
-        }
-        else if ( [[error domain] isEqualToString:DOMAIN_XODIAC] ) {
-            switch (error.code) {
-                case 7:
-                    // TODO: Currently SecureAjax returns code 7 for invalid login. Must change it
-                    NSLog(@"Failed to login user %@", @"wrong");
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-     */
+    WITHIN_DOMAIN(error, DOMAIN_XODIAC)
+        case X_CODE_LOGIN_FAILED:
+            // Falling through here is perfectly fine.
+            // Just print the message
+            NSLog(@"Failed to login user %@", @"wrong");
+            break;
+        case X_CODE_NO_CONNECTION:
+            STFail(@"The test was failed because there is no connection to the server");
+            break;
+        default:
+            STFail(@"Unknown error occurred!");
+            break;
+    END_WITHIN_DOMAIN
 }
 
 - (void)testSecureLoginNoServer {
-    NSString* currentServer = @"http://serverthatdoesnotexist:9001";
+    NSString* server = @"http://serverthatdoesnotexist:9001";
     
     // Important! Reset error object before using it
     NSError* error = Nil;
     
-    NSDictionary* result = [self connectAndLogin: currentServer username:@"test" password:@"test" error:&error];
+    // Don't bother to return anything as we do not intend to actually hit the server
+    [UserActivityManager doLogin:server forUsername:@"test" forPassword:@"test" error:&error];   
     
-    STAssertEquals(error.code, -1003, @"Expected to recieve -1003 when there is no connection");
+    WITHIN_DOMAIN(error, DOMAIN_XODIAC)
+        case X_CODE_LOGIN_FAILED:
+            STFail(@"Connection to server was done but shouldn't have. Please check the test configuration");
+            break;
+        case X_CODE_NO_CONNECTION:
+            NSLog(@"Connection to the server %@ could not be made as expected", server);
     
-    // Check the error if not successfull
-    if(error){
-        switch(error.code){
-            case -1003:
-                NSLog(@"There was no connection");
-                break;
-        }
-    }
+            // Now let's have an inner error and try to figure what was the 
+            // reason for not being able to connect
+            NSError* inner = [[error userInfo] objectForKey:@"innerError"];
+            switch(inner.code){
+                case -1004:
+                    NSLog(@"The server was down but it was a valid server");
+                    break;
+                case -1003:
+                    NSLog(@"The server doesn't exist");
+                    break;
+                case -1002:
+                    NSLog(@"An invalid URL has been provided");
+                    break;
+            }            
+            break;
+        default:
+            STFail(@"Unknown error occurred!");
+            break;
+    END_WITHIN_DOMAIN
 }
 
 -(void)testBase64 {
