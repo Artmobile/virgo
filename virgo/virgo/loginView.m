@@ -44,9 +44,7 @@
     UIAlertView *alert = nil;
     
     if(error){
-        if([error.domain isEqualToString:DOMAIN_XODIAC]){
-            // Wrong login information
-            switch(error.code){
+        WITHIN_DOMAIN(error, DOMAIN_XODIAC)
                 case X_CODE_LOGIN_FAILED:
                     NSLog(@"Could not login user %@", username);
                     // Provided invalid credentials
@@ -54,37 +52,46 @@
                                                        message:@"Wrong username and password were provided"
                                                       delegate:nil 
                                              cancelButtonTitle:@"OK" 
-                                             otherButtonTitles: nil];        
+                                             otherButtonTitles: nil];
+        
                     break;
-                default:
-                    break;
-            }
-        }
-        else if ([error.domain isEqualToString:DOMAIN_NSURLERRORDOMAIN]){
-            // No connection to the server
-            switch (error.code) {
-                case -1004:
-                case -1003:
+                case X_CODE_NO_CONNECTION:
                     // Show the popup message that the server cannot be contacted and bail out
                     alert = [[UIAlertView alloc] initWithTitle:@"Communition error occurred"
-                                                                    message:[error localizedDescription]
-                                                                   delegate:nil 
-                                                          cancelButtonTitle:@"OK" 
-                                                          otherButtonTitles: nil];        
+                                                       message:[error localizedDescription]
+                                                      delegate:nil 
+                                             cancelButtonTitle:@"OK" 
+                                             otherButtonTitles: nil];
                     NSLog(@"Could not login because the application failed to login to the server");
                     break;
                 default:
                     break;
-            }
-            
-        }
+        END_WITHIN_DOMAIN
+    }
+    
+    if(alert){
+        // Show whaterver alert we've got along the way
+        [alert show];
+        [alert release];
+    }
+    else{
+        // Here we can go ahead add our bookmark
+        // Show the popup message that the server cannot be contacted and bail out
         
+        // TODO: Add bookmark manager here
+        
+        
+        alert = [[UIAlertView alloc] initWithTitle:@"Successful login"
+                                           message:@"Your bookmark has been successfully added. Please open Safari and try it"
+                                          delegate:nil 
+                                 cancelButtonTitle:@"OK" 
+                                 otherButtonTitles: nil];
+
         [alert show];
         [alert release];
 
+        NSLog(@"Successfully logged into %@", admin_id);
     }
-    
-    NSLog(@"Successfully logged into %@", admin_id);
 }
 
 - (IBAction)doRegister:(id)sender {
