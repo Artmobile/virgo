@@ -19,6 +19,7 @@
     IBOutlet forgotPasswordViewController *forgotPasswordViewController;
     UIColor                         *textColor;
     NSMutableArray                  *history;
+    NSString                        *currentServer;
     
 }
 
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) IBOutlet UIColor              *textColor;
 @property (nonatomic, retain) UIViewController              *currentViewController;
 @property (nonatomic, retain) NSString                      *currentKey;    
+@property (nonatomic, retain) NSString                      *currentServer;    
 
 
 // The method that will flip between the views

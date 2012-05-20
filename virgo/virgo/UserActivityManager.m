@@ -57,7 +57,7 @@
     // Important! Reset error object before using it
     NSError* err = Nil;
     
-    NSDictionary* result = [self connectAndLogin: server username:@"wrong" password:@"wrong" error:&err];
+    NSDictionary* result = [self connectAndLogin: server username:username password:password error:&err];
     
     if(error){
         if ( [[err domain] isEqualToString:@"SecureSocialAjax.login"] ) {

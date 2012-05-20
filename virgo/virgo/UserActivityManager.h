@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface UserActivityManager : NSObject
-+ (NSString*) doLogin: (NSString*) server forUsername:(NSString*) username forPassword:(NSString*)password error:(NSError**)error;
++ (NSString*) doLogin: (NSString*)server forUsername:(NSString*) username forPassword:(NSString*)password error:(NSError**)error;
 @end

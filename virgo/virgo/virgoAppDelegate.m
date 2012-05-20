@@ -25,12 +25,18 @@
 @synthesize history = _history;
 @synthesize currentViewController = _current;
 @synthesize currentKey = _currentKey;
+@synthesize currentServer = _currentServer;
 
-
-NSString* currentServer = @"http://localhost:9001";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+#if TARGET_IPHONE_SIMULATOR
+    _currentServer = @"http://localhost:9001";
+#else
+    _currentServer = @"http://xodiac.herokuapp.com";
+#endif    
+    
     // Override point for customization after application launch.
      
     _textColor = [UIColor blackColor];
@@ -43,7 +49,7 @@ NSString* currentServer = @"http://localhost:9001";
     
     NSError* err = Nil;
     // Try to negotiate the current key from the dispatcher server
-    _currentKey = [SecureJsonChannel negotiateKey:currentServer error:&err];
+    _currentKey = [SecureJsonChannel negotiateKey:_currentServer error:&err];
     if(err){
         // Show the popup message that the server cannot be contacted and bail out
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communition error occurred" 
@@ -54,7 +60,6 @@ NSString* currentServer = @"http://localhost:9001";
         [alert show];
         [alert release];
     }
-    
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];

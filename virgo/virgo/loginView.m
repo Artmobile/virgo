@@ -26,14 +26,19 @@
 }
 
 - (IBAction)doLogin:(id)sender {
-
+    virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
+    NSError* error;
+    
+    
     // Perform the login
     NSString* username = txtUsername.text;
     NSString* password = txtPassword.text;
     
 
     // Get admin_id from the Xodiac service
-    NSString* admin_id = [UserActivityManager doLogin:username andPassword:password];
+    NSString* admin_id = [UserActivityManager doLogin:mainDelegate.currentKey forUsername: username forPassword:password error:&error];
+    
+    NSLog(@"Successfully logged into %@", admin_id);
 }
 
 - (IBAction)doRegister:(id)sender {
