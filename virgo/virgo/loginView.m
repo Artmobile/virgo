@@ -9,7 +9,7 @@
 #import "loginView.h"
 #import "virgoAppDelegate.h"
 #import "SecureJsonChannel.h"
-#import "LoginManager.h"
+#import "UserActivityManager.h"
 
 @implementation loginView
 
@@ -33,7 +33,7 @@
     
 
     // Get admin_id from the Xodiac service
-    NSString* admin_id = [LoginManager doLogin:username andPassword:password];
+    NSString* admin_id = [UserActivityManager doLogin:username andPassword:password];
 }
 
 - (IBAction)doRegister:(id)sender {

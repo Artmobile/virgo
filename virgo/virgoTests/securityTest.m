@@ -1,4 +1,4 @@
-//
+    //
 //  securityTest.m
 //  virgo
 //
@@ -12,6 +12,8 @@
 #import "Base64Encoder.h"
 #import "SecureJsonChannel.h"
 #import "virgoAppDelegate.h"
+#import "ErrorCodes.h"
+#import "UserActivityManager.h"
 
 
 @implementation securityTest
@@ -32,7 +34,7 @@
     virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
     
     if([mainDelegate currentKey] == Nil || mainDelegate.currentKey.length <=0){
-        _currentKey = [SecureJsonChannel negotiateKey:server];
+        _currentKey = [SecureJsonChannel negotiateKey:server error: &err];
     }
     else
         _currentKey = [mainDelegate currentKey];
@@ -63,27 +65,72 @@
 }
 
 - (void)testWrongLogin{
+    
     NSString* currentServer = @"http://localhost:9001";
     // Important! Reset error object before using it
     NSError* error = Nil;
+    
+//    NSString* admin_id =  [UserActivityManager doLogin:currentServer forUsername:@"wrong" forPassword:@"wrong" error:&error];   
 
+    
+    NSString* admin_id =  [UserActivityManager doLogin:currentServer forUsername:@"wrong" forPassword:@"wrong" error:&error];   
+    
+
+    if(!error){
+        STFail("No error was return when wrong username and password were passed to the doLogin function");
+        return;
+    }
+    
+    if(error){
+        if ( [[error domain] isEqualToString:DOMAIN_NSURLERRORDOMAIN] ) {
+            switch (error.code) {
+                case -1003:
+                    STFail(@"There was no connection. Please check that the application is started at %@", currentServer);
+                    break;
+                default:
+                    break;
+            }
+        }
+        else if ( [[error domain] isEqualToString:DOMAIN_XODIAC] ) {
+            switch (error.code) {
+                case X_CODE_LOGIN_FAILED:
+                    // TODO: Currently SecureAjax returns code 7 for invalid login. Must change it
+                    NSLog(@"Failed to login user %@", @"wrong");
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    
+    /*
     NSDictionary* result = [self connectAndLogin: currentServer username:@"wrong" password:@"wrong" error:&error];
     
     STAssertNotNil(error, @"Wrong user and password were specified but error returned was Nil");
     
+    
     if(error){
-        switch (error.code) {
-            case 7:
-                // TODO: Currently SecureAjax returns code 7 for invalid login. Must change it
-                NSLog(@"Failed to login user %@", @"wrong");
-                break;
-            case -1003:
-                STFail(@"There was no connection. Please check that the application is started at %@", currentServer);
-                break;
-            default:
-                break;
+        if ( [[error domain] isEqualToString:DOMAIN_NSURLERRORDOMAIN] ) {
+            switch (error.code) {
+                case -1003:
+                    STFail(@"There was no connection. Please check that the application is started at %@", currentServer);
+                    break;
+                default:
+                    break;
+            }
+        }
+        else if ( [[error domain] isEqualToString:DOMAIN_XODIAC] ) {
+            switch (error.code) {
+                case 7:
+                    // TODO: Currently SecureAjax returns code 7 for invalid login. Must change it
+                    NSLog(@"Failed to login user %@", @"wrong");
+                    break;
+                default:
+                    break;
+            }
         }
     }
+     */
 }
 
 - (void)testSecureLoginNoServer {
