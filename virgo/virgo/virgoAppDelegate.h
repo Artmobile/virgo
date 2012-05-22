@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class virgoViewController, loginViewController, createUserViewController, forgotPasswordViewController, pillsViewController;
+@class  virgoViewController, 
+        loginViewController, 
+        createUserViewController, 
+        forgotPasswordViewController, 
+        pillsViewController, 
+        configurationViewController;
 
 @interface virgoAppDelegate : NSObject <UIApplicationDelegate>{
     IBOutlet UIWindow               *window;
@@ -17,6 +22,7 @@
     IBOutlet pillsViewController    *pillsViewController;
     IBOutlet createUserViewController *createUserViewController; 
     IBOutlet forgotPasswordViewController *forgotPasswordViewController;
+    IBOutlet configurationViewController  *configurationViewController;
     UIColor                         *textColor;
     NSMutableArray                  *history;
     NSString                        *currentServer;
@@ -30,6 +36,7 @@
 @property (nonatomic, retain) IBOutlet pillsViewController  *pillsViewController;
 @property (nonatomic, retain) IBOutlet createUserViewController  *createUserViewController;
 @property (nonatomic, retain) IBOutlet forgotPasswordViewController  *forgotPasswordViewController;
+@property (nonatomic, retain) IBOutlet configurationViewController *configurationViewController;
 @property (nonatomic, retain) NSMutableArray                *history;
 @property (nonatomic, retain) IBOutlet UIColor              *textColor;
 @property (nonatomic, retain) UIViewController              *currentViewController;

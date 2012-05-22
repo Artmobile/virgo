@@ -32,6 +32,14 @@
     theLabel.textColor = mainDelegate.textColor;
 }
 
+- (IBAction)flipToConfiguration:(id)sender{
+    virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
+    configurationViewController* config = [[configurationViewController alloc] initWithNibName:@"configurationViewController" bundle:nil];
+    
+    [mainDelegate flipForward:(UIViewController*)config];
+    
+}
+
 - (IBAction)tellDelegateToFlipViews:(id)sender{
     virgoAppDelegate* mainDelegate = (virgoAppDelegate*)[[UIApplication sharedApplication]delegate];
     loginViewController* login = [[loginViewController alloc] initWithNibName:@"loginViewController" bundle:nil];

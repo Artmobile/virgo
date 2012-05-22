@@ -15,6 +15,7 @@
 
 - (IBAction)sayHi:(id)sender;
 - (IBAction)tellDelegateToFlipViews:(id)sender;
+- (IBAction)flipToConfiguration:(id)sender;
 
 @property (nonatomic, retain) UILabel* theLabel;
 

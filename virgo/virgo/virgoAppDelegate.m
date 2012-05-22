@@ -21,6 +21,7 @@
 @synthesize forgotPasswordViewController = forgotPasswordController;
 @synthesize createUserViewController = _createUserController;
 @synthesize pillsViewController = _pillsController;
+@synthesize configurationViewController = _configurationViewController;
 @synthesize textColor = _textColor;
 @synthesize history = _history;
 @synthesize currentViewController = _current;
@@ -48,21 +49,16 @@
     _current = _viewController;
     
     NSError* err = Nil;
-    // Try to negotiate the current key from the dispatcher server
+    // Try to negotiate the current key from the dispatcher server when the application is loading
     _currentKey = [SecureJsonChannel negotiateKey:_currentServer error:&err];
     
-    /*
+    
     if(err){
-        // Show the popup message that the server cannot be contacted and bail out
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Communition error occurred" 
-														message:[err localizedDescription]
-													   delegate:nil 
-											  cancelButtonTitle:@"OK" 
-											  otherButtonTitles: nil];        
-        [alert show];
-        [alert release];
+        // If an error has occurred, print an error into the NSLog 
+        // Not fatal, the key may be negotiated at a later stage.
+        NSLog(@"Error occurred during initial handshake. Error message: %@", err.localizedDescription);
     }
-    */
+    
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];

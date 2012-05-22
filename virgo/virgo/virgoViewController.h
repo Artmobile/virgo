@@ -11,5 +11,6 @@
 @interface virgoViewController : UIViewController
 
 - (IBAction)onLogin:(id)sender;
+- (IBAction)onShowConfiguration:(id)sender;
 
 @end

@@ -62,7 +62,7 @@
                                                       delegate:nil 
                                              cancelButtonTitle:@"OK" 
                                              otherButtonTitles: nil];
-                    NSLog(@"Could not login because the application failed to login to the server");
+                    NSLog(@"Could not login because the application failed to access the server");
                     break;
                 default:
                     break;
