@@ -1,0 +1,754 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D40BECA2155296870023BA79 /* createUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40BECA0155296870023BA79 /* createUserViewController.m */; };
+		D40BECA3155296870023BA79 /* createUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40BECA1155296870023BA79 /* createUserViewController.xib */; };
+		D40BECA8155296CC0023BA79 /* forgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40BECA6155296CC0023BA79 /* forgotPasswordViewController.m */; };
+		D40BECA9155296CC0023BA79 /* forgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40BECA7155296CC0023BA79 /* forgotPasswordViewController.xib */; };
+		D4169A701568F5180016A82B /* UserActivityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4169A6F1568F5180016A82B /* UserActivityManager.m */; };
+		D4440EFA1552A6D800CFF3B4 /* createUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4440EF91552A6D800CFF3B4 /* createUserView.m */; };
+		D4440EFE1552A95A00CFF3B4 /* forgotPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4440EFD1552A95A00CFF3B4 /* forgotPasswordView.m */; };
+		D4440F031552AF1700CFF3B4 /* pillsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4440F011552AF1700CFF3B4 /* pillsViewController.m */; };
+		D4440F041552AF1700CFF3B4 /* pillsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4440F021552AF1700CFF3B4 /* pillsViewController.xib */; };
+		D4440F071552AF2500CFF3B4 /* pillsView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4440F061552AF2500CFF3B4 /* pillsView.m */; };
+		D4440F0F1552B13400CFF3B4 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4440F0E1552B13400CFF3B4 /* CustomButton.m */; };
+		D4440F121552B14C00CFF3B4 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = D4440F111552B14C00CFF3B4 /* Common.m */; };
+		D4E13B50155107F400110792 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E13B4F155107F400110792 /* UIKit.framework */; };
+		D4E13B52155107F400110792 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E13B51155107F400110792 /* Foundation.framework */; };
+		D4E13B54155107F400110792 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E13B53155107F400110792 /* CoreGraphics.framework */; };
+		D4E13B5A155107F400110792 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4E13B58155107F400110792 /* InfoPlist.strings */; };
+		D4E13B5C155107F400110792 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E13B5B155107F400110792 /* main.m */; };
+		D4E13B60155107F400110792 /* virgoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E13B5F155107F400110792 /* virgoAppDelegate.m */; };
+		D4E13B63155107F400110792 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E13B61155107F400110792 /* MainWindow.xib */; };
+		D4E13B66155107F400110792 /* virgoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E13B65155107F400110792 /* virgoViewController.m */; };
+		D4E13B69155107F400110792 /* virgoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E13B67155107F400110792 /* virgoViewController.xib */; };
+		D4E13B71155107F400110792 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E13B70155107F400110792 /* SenTestingKit.framework */; };
+		D4E13B72155107F400110792 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E13B4F155107F400110792 /* UIKit.framework */; };
+		D4E13B73155107F400110792 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E13B51155107F400110792 /* Foundation.framework */; };
+		D4E13B74155107F400110792 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E13B53155107F400110792 /* CoreGraphics.framework */; };
+		D4E13B7C155107F400110792 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4E13B7A155107F400110792 /* InfoPlist.strings */; };
+		D4E13B7E155107F400110792 /* virgoTests.h in Resources */ = {isa = PBXBuildFile; fileRef = D4E13B7D155107F400110792 /* virgoTests.h */; };
+		D4E13B80155107F400110792 /* virgoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E13B7F155107F400110792 /* virgoTests.m */; };
+		D4E13B9C15510D6900110792 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E13B9A15510D6900110792 /* loginViewController.m */; };
+		D4E13B9D15510D6900110792 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E13B9B15510D6900110792 /* loginViewController.xib */; };
+		D4E13BA415510EBB00110792 /* appView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E13BA315510EBB00110792 /* appView.m */; };
+		D4E13BA715510EC900110792 /* loginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E13BA615510EC900110792 /* loginView.m */; };
+		D4E13BAE15512F6100110792 /* NSStack.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E13BAD15512F6100110792 /* NSStack.m */; };
+		D4EC03B71557E4C80020668F /* securityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC03B41557DAD00020668F /* securityTest.m */; };
+		D4EC03BF1568D5DD0020668F /* ErrorCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC03BE1568D5DD0020668F /* ErrorCodes.m */; };
+		D4ECBEE015527640000B08DF /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = D4ECBEDC15527640000B08DF /* CHANGELOG.md */; };
+		D4ECBEE115527640000B08DF /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ECBEDE15527640000B08DF /* JSONKit.m */; };
+		D4ECBEE215527640000B08DF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D4ECBEDF15527640000B08DF /* README.md */; };
+		D4ECBEE615527668000B08DF /* SqliteHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ECBEE515527668000B08DF /* SqliteHelper.m */; };
+		D4ECBEE815527696000B08DF /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D4ECBEE715527696000B08DF /* libsqlite3.0.dylib */; };
+		D4ECBEF71552779A000B08DF /* Bookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ECBEF41552779A000B08DF /* Bookmark.m */; };
+		D4ECBEF81552779A000B08DF /* BookmarkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ECBEF61552779A000B08DF /* BookmarkManager.m */; };
+		D4ECBF01155277F7000B08DF /* Cipher.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ECBEFC155277F7000B08DF /* Cipher.m */; };
+		D4ECBF02155277F7000B08DF /* JsonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ECBEFE155277F7000B08DF /* JsonHelper.m */; };
+		D4ECBF03155277F7000B08DF /* SecureJsonChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ECBF00155277F7000B08DF /* SecureJsonChannel.m */; };
+		D4ECBF061552785C000B08DF /* Base64Encoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ECBF051552785C000B08DF /* Base64Encoder.m */; };
+		D4EFEAD9156BDEA200014146 /* configurationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EFEAD8156BDEA200014146 /* configurationView.m */; };
+		D4EFEADF156BDEF900014146 /* configurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EFEADD156BDEF900014146 /* configurationViewController.m */; };
+		D4EFEAE0156BDEF900014146 /* configurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4EFEADE156BDEF900014146 /* configurationViewController.xib */; };
+		D4F4E3A8155518D10024457B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F4E3A7155518D10024457B /* libsqlite3.0.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4E13B75155107F400110792 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4E13B42155107F400110792 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4E13B4A155107F400110792;
+			remoteInfo = virgo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D40BEC9F155296870023BA79 /* createUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = createUserViewController.h; sourceTree = "<group>"; };
+		D40BECA0155296870023BA79 /* createUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = createUserViewController.m; sourceTree = "<group>"; };
+		D40BECA1155296870023BA79 /* createUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = createUserViewController.xib; sourceTree = "<group>"; };
+		D40BECA5155296CC0023BA79 /* forgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forgotPasswordViewController.h; sourceTree = "<group>"; };
+		D40BECA6155296CC0023BA79 /* forgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = forgotPasswordViewController.m; sourceTree = "<group>"; };
+		D40BECA7155296CC0023BA79 /* forgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = forgotPasswordViewController.xib; sourceTree = "<group>"; };
+		D4169A6E1568F5180016A82B /* UserActivityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserActivityManager.h; sourceTree = "<group>"; };
+		D4169A6F1568F5180016A82B /* UserActivityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserActivityManager.m; sourceTree = "<group>"; };
+		D4440EF81552A6D800CFF3B4 /* createUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = createUserView.h; sourceTree = "<group>"; };
+		D4440EF91552A6D800CFF3B4 /* createUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = createUserView.m; sourceTree = "<group>"; };
+		D4440EFC1552A95A00CFF3B4 /* forgotPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forgotPasswordView.h; sourceTree = "<group>"; };
+		D4440EFD1552A95A00CFF3B4 /* forgotPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = forgotPasswordView.m; sourceTree = "<group>"; };
+		D4440F001552AF1700CFF3B4 /* pillsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pillsViewController.h; sourceTree = "<group>"; };
+		D4440F011552AF1700CFF3B4 /* pillsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pillsViewController.m; sourceTree = "<group>"; };
+		D4440F021552AF1700CFF3B4 /* pillsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = pillsViewController.xib; sourceTree = "<group>"; };
+		D4440F051552AF2500CFF3B4 /* pillsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pillsView.h; sourceTree = "<group>"; };
+		D4440F061552AF2500CFF3B4 /* pillsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pillsView.m; sourceTree = "<group>"; };
+		D4440F0D1552B13400CFF3B4 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
+		D4440F0E1552B13400CFF3B4 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
+		D4440F101552B14C00CFF3B4 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		D4440F111552B14C00CFF3B4 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		D4E13B4B155107F400110792 /* virgo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = virgo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4E13B4F155107F400110792 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D4E13B51155107F400110792 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D4E13B53155107F400110792 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D4E13B57155107F400110792 /* virgo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "virgo-Info.plist"; sourceTree = "<group>"; };
+		D4E13B59155107F400110792 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4E13B5B155107F400110792 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D4E13B5D155107F400110792 /* virgo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "virgo-Prefix.pch"; sourceTree = "<group>"; };
+		D4E13B5E155107F400110792 /* virgoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = virgoAppDelegate.h; sourceTree = "<group>"; };
+		D4E13B5F155107F400110792 /* virgoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = virgoAppDelegate.m; sourceTree = "<group>"; };
+		D4E13B62155107F400110792 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		D4E13B64155107F400110792 /* virgoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = virgoViewController.h; sourceTree = "<group>"; };
+		D4E13B65155107F400110792 /* virgoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = virgoViewController.m; sourceTree = "<group>"; };
+		D4E13B68155107F400110792 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/virgoViewController.xib; sourceTree = "<group>"; };
+		D4E13B6F155107F400110792 /* virgoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = virgoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4E13B70155107F400110792 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D4E13B79155107F400110792 /* virgoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "virgoTests-Info.plist"; sourceTree = "<group>"; };
+		D4E13B7B155107F400110792 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4E13B7D155107F400110792 /* virgoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = virgoTests.h; sourceTree = "<group>"; };
+		D4E13B7F155107F400110792 /* virgoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = virgoTests.m; sourceTree = "<group>"; };
+		D4E13B9915510D6900110792 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
+		D4E13B9A15510D6900110792 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
+		D4E13B9B15510D6900110792 /* loginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loginViewController.xib; sourceTree = "<group>"; };
+		D4E13BA215510EBB00110792 /* appView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appView.h; sourceTree = "<group>"; };
+		D4E13BA315510EBB00110792 /* appView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = appView.m; sourceTree = "<group>"; };
+		D4E13BA515510EC900110792 /* loginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginView.h; sourceTree = "<group>"; };
+		D4E13BA615510EC900110792 /* loginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginView.m; sourceTree = "<group>"; };
+		D4E13BAC15512F6100110792 /* NSStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStack.h; sourceTree = "<group>"; };
+		D4E13BAD15512F6100110792 /* NSStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStack.m; sourceTree = "<group>"; };
+		D4EC03B31557DAD00020668F /* securityTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = securityTest.h; sourceTree = "<group>"; };
+		D4EC03B41557DAD00020668F /* securityTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = securityTest.m; sourceTree = "<group>"; };
+		D4EC03B8155949B90020668F /* ErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorCodes.h; sourceTree = "<group>"; };
+		D4EC03BE1568D5DD0020668F /* ErrorCodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorCodes.m; sourceTree = "<group>"; };
+		D4ECBEDC15527640000B08DF /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		D4ECBEDD15527640000B08DF /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		D4ECBEDE15527640000B08DF /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		D4ECBEDF15527640000B08DF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		D4ECBEE415527668000B08DF /* SqliteHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SqliteHelper.h; path = Library/SqliteHelper.h; sourceTree = "<group>"; };
+		D4ECBEE515527668000B08DF /* SqliteHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SqliteHelper.m; path = Library/SqliteHelper.m; sourceTree = "<group>"; };
+		D4ECBEE715527696000B08DF /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		D4ECBEF31552779A000B08DF /* Bookmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bookmark.h; sourceTree = "<group>"; };
+		D4ECBEF41552779A000B08DF /* Bookmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bookmark.m; sourceTree = "<group>"; };
+		D4ECBEF51552779A000B08DF /* BookmarkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarkManager.h; sourceTree = "<group>"; };
+		D4ECBEF61552779A000B08DF /* BookmarkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarkManager.m; sourceTree = "<group>"; };
+		D4ECBEFB155277F7000B08DF /* Cipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cipher.h; sourceTree = "<group>"; };
+		D4ECBEFC155277F7000B08DF /* Cipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cipher.m; sourceTree = "<group>"; };
+		D4ECBEFD155277F7000B08DF /* JsonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonHelper.h; sourceTree = "<group>"; };
+		D4ECBEFE155277F7000B08DF /* JsonHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonHelper.m; sourceTree = "<group>"; };
+		D4ECBEFF155277F7000B08DF /* SecureJsonChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecureJsonChannel.h; sourceTree = "<group>"; };
+		D4ECBF00155277F7000B08DF /* SecureJsonChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecureJsonChannel.m; sourceTree = "<group>"; };
+		D4ECBF041552785C000B08DF /* Base64Encoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Encoder.h; sourceTree = "<group>"; };
+		D4ECBF051552785C000B08DF /* Base64Encoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64Encoder.m; sourceTree = "<group>"; };
+		D4EFEAD7156BDEA100014146 /* configurationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = configurationView.h; sourceTree = "<group>"; };
+		D4EFEAD8156BDEA200014146 /* configurationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = configurationView.m; sourceTree = "<group>"; };
+		D4EFEADC156BDEF900014146 /* configurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = configurationViewController.h; sourceTree = "<group>"; };
+		D4EFEADD156BDEF900014146 /* configurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = configurationViewController.m; sourceTree = "<group>"; };
+		D4EFEADE156BDEF900014146 /* configurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = configurationViewController.xib; sourceTree = "<group>"; };
+		D4F4E3A7155518D10024457B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4E13B48155107F400110792 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4ECBEE815527696000B08DF /* libsqlite3.0.dylib in Frameworks */,
+				D4E13B50155107F400110792 /* UIKit.framework in Frameworks */,
+				D4E13B52155107F400110792 /* Foundation.framework in Frameworks */,
+				D4E13B54155107F400110792 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4E13B6B155107F400110792 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F4E3A8155518D10024457B /* libsqlite3.0.dylib in Frameworks */,
+				D4E13B71155107F400110792 /* SenTestingKit.framework in Frameworks */,
+				D4E13B72155107F400110792 /* UIKit.framework in Frameworks */,
+				D4E13B73155107F400110792 /* Foundation.framework in Frameworks */,
+				D4E13B74155107F400110792 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D40BEC9D1552966E0023BA79 /* CreateUser */ = {
+			isa = PBXGroup;
+			children = (
+				D40BEC9F155296870023BA79 /* createUserViewController.h */,
+				D40BECA0155296870023BA79 /* createUserViewController.m */,
+				D40BECA1155296870023BA79 /* createUserViewController.xib */,
+			);
+			name = CreateUser;
+			sourceTree = "<group>";
+		};
+		D40BECA4155296B60023BA79 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				D40BECA5155296CC0023BA79 /* forgotPasswordViewController.h */,
+				D40BECA6155296CC0023BA79 /* forgotPasswordViewController.m */,
+				D40BECA7155296CC0023BA79 /* forgotPasswordViewController.xib */,
+			);
+			name = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		D4440EFF1552AEFA00CFF3B4 /* Pills */ = {
+			isa = PBXGroup;
+			children = (
+				D4440F001552AF1700CFF3B4 /* pillsViewController.h */,
+				D4440F011552AF1700CFF3B4 /* pillsViewController.m */,
+				D4440F021552AF1700CFF3B4 /* pillsViewController.xib */,
+			);
+			name = Pills;
+			sourceTree = "<group>";
+		};
+		D4440F0C1552B13400CFF3B4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D4440F0D1552B13400CFF3B4 /* CustomButton.h */,
+				D4440F0E1552B13400CFF3B4 /* CustomButton.m */,
+				D4440F101552B14C00CFF3B4 /* Common.h */,
+				D4440F111552B14C00CFF3B4 /* Common.m */,
+			);
+			name = UI;
+			path = Library/UI;
+			sourceTree = "<group>";
+		};
+		D4E13B40155107F400110792 = {
+			isa = PBXGroup;
+			children = (
+				D4F4E3A7155518D10024457B /* libsqlite3.0.dylib */,
+				D4ECBEE715527696000B08DF /* libsqlite3.0.dylib */,
+				D4E13B55155107F400110792 /* virgo */,
+				D4E13B77155107F400110792 /* virgoTests */,
+				D4E13B4E155107F400110792 /* Frameworks */,
+				D4E13B4C155107F400110792 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4E13B4C155107F400110792 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4E13B4B155107F400110792 /* virgo.app */,
+				D4E13B6F155107F400110792 /* virgoTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4E13B4E155107F400110792 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4E13B4F155107F400110792 /* UIKit.framework */,
+				D4E13B51155107F400110792 /* Foundation.framework */,
+				D4E13B53155107F400110792 /* CoreGraphics.framework */,
+				D4E13B70155107F400110792 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4E13B55155107F400110792 /* virgo */ = {
+			isa = PBXGroup;
+			children = (
+				D4E13BA815512F0B00110792 /* Library */,
+				D4E13B9E15510DE600110792 /* Views */,
+				D4E13B8A155108D000110792 /* ViewControllers */,
+				D4E13B5E155107F400110792 /* virgoAppDelegate.h */,
+				D4E13B5F155107F400110792 /* virgoAppDelegate.m */,
+				D4E13B61155107F400110792 /* MainWindow.xib */,
+				D4E13B56155107F400110792 /* Supporting Files */,
+			);
+			path = virgo;
+			sourceTree = "<group>";
+		};
+		D4E13B56155107F400110792 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4E13B57155107F400110792 /* virgo-Info.plist */,
+				D4E13B58155107F400110792 /* InfoPlist.strings */,
+				D4E13B5B155107F400110792 /* main.m */,
+				D4E13B5D155107F400110792 /* virgo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4E13B77155107F400110792 /* virgoTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4E13B7D155107F400110792 /* virgoTests.h */,
+				D4E13B7F155107F400110792 /* virgoTests.m */,
+				D4E13B78155107F400110792 /* Supporting Files */,
+				D4EC03B31557DAD00020668F /* securityTest.h */,
+				D4EC03B41557DAD00020668F /* securityTest.m */,
+			);
+			path = virgoTests;
+			sourceTree = "<group>";
+		};
+		D4E13B78155107F400110792 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4E13B79155107F400110792 /* virgoTests-Info.plist */,
+				D4E13B7A155107F400110792 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4E13B8A155108D000110792 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4EFEADB156BDEAE00014146 /* Configuration */,
+				D4440EFF1552AEFA00CFF3B4 /* Pills */,
+				D40BECA4155296B60023BA79 /* ForgotPassword */,
+				D40BEC9D1552966E0023BA79 /* CreateUser */,
+				D4E13B9315510D1400110792 /* App */,
+				D4E13B9215510CF700110792 /* Login */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D4E13B9215510CF700110792 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D4E13B9915510D6900110792 /* loginViewController.h */,
+				D4E13B9A15510D6900110792 /* loginViewController.m */,
+				D4E13B9B15510D6900110792 /* loginViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		D4E13B9315510D1400110792 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D4E13B64155107F400110792 /* virgoViewController.h */,
+				D4E13B65155107F400110792 /* virgoViewController.m */,
+				D4E13B67155107F400110792 /* virgoViewController.xib */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		D4E13B9E15510DE600110792 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4E13BA215510EBB00110792 /* appView.h */,
+				D4E13BA315510EBB00110792 /* appView.m */,
+				D4E13BA515510EC900110792 /* loginView.h */,
+				D4E13BA615510EC900110792 /* loginView.m */,
+				D4440EF81552A6D800CFF3B4 /* createUserView.h */,
+				D4440EF91552A6D800CFF3B4 /* createUserView.m */,
+				D4440EFC1552A95A00CFF3B4 /* forgotPasswordView.h */,
+				D4440EFD1552A95A00CFF3B4 /* forgotPasswordView.m */,
+				D4440F051552AF2500CFF3B4 /* pillsView.h */,
+				D4440F061552AF2500CFF3B4 /* pillsView.m */,
+				D4EFEAD7156BDEA100014146 /* configurationView.h */,
+				D4EFEAD8156BDEA200014146 /* configurationView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D4E13BA815512F0B00110792 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				D4440F0C1552B13400CFF3B4 /* UI */,
+				D4ECBEDB15527640000B08DF /* JSONKit */,
+				D4ECBEFA155277F7000B08DF /* SecureChannels */,
+				D4ECBEF21552779A000B08DF /* Bookmarks */,
+				D4ECBEE415527668000B08DF /* SqliteHelper.h */,
+				D4ECBEE515527668000B08DF /* SqliteHelper.m */,
+				D4E13BAC15512F6100110792 /* NSStack.h */,
+				D4E13BAD15512F6100110792 /* NSStack.m */,
+				D4EC03B8155949B90020668F /* ErrorCodes.h */,
+				D4EC03BE1568D5DD0020668F /* ErrorCodes.m */,
+				D4169A6E1568F5180016A82B /* UserActivityManager.h */,
+				D4169A6F1568F5180016A82B /* UserActivityManager.m */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		D4ECBEDB15527640000B08DF /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				D4ECBEDC15527640000B08DF /* CHANGELOG.md */,
+				D4ECBEDD15527640000B08DF /* JSONKit.h */,
+				D4ECBEDE15527640000B08DF /* JSONKit.m */,
+				D4ECBEDF15527640000B08DF /* README.md */,
+			);
+			name = JSONKit;
+			path = Library/JSONKit;
+			sourceTree = "<group>";
+		};
+		D4ECBEF21552779A000B08DF /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				D4ECBEF31552779A000B08DF /* Bookmark.h */,
+				D4ECBEF41552779A000B08DF /* Bookmark.m */,
+				D4ECBEF51552779A000B08DF /* BookmarkManager.h */,
+				D4ECBEF61552779A000B08DF /* BookmarkManager.m */,
+			);
+			name = Bookmarks;
+			path = Library/Bookmarks;
+			sourceTree = "<group>";
+		};
+		D4ECBEFA155277F7000B08DF /* SecureChannels */ = {
+			isa = PBXGroup;
+			children = (
+				D4ECBF041552785C000B08DF /* Base64Encoder.h */,
+				D4ECBF051552785C000B08DF /* Base64Encoder.m */,
+				D4ECBEFB155277F7000B08DF /* Cipher.h */,
+				D4ECBEFC155277F7000B08DF /* Cipher.m */,
+				D4ECBEFD155277F7000B08DF /* JsonHelper.h */,
+				D4ECBEFE155277F7000B08DF /* JsonHelper.m */,
+				D4ECBEFF155277F7000B08DF /* SecureJsonChannel.h */,
+				D4ECBF00155277F7000B08DF /* SecureJsonChannel.m */,
+			);
+			name = SecureChannels;
+			path = Library/SecureChannels;
+			sourceTree = "<group>";
+		};
+		D4EFEADB156BDEAE00014146 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D4EFEADC156BDEF900014146 /* configurationViewController.h */,
+				D4EFEADD156BDEF900014146 /* configurationViewController.m */,
+				D4EFEADE156BDEF900014146 /* configurationViewController.xib */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4E13B4A155107F400110792 /* virgo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4E13B83155107F400110792 /* Build configuration list for PBXNativeTarget "virgo" */;
+			buildPhases = (
+				D4E13B47155107F400110792 /* Sources */,
+				D4E13B48155107F400110792 /* Frameworks */,
+				D4E13B49155107F400110792 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = virgo;
+			productName = virgo;
+			productReference = D4E13B4B155107F400110792 /* virgo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4E13B6E155107F400110792 /* virgoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4E13B86155107F400110792 /* Build configuration list for PBXNativeTarget "virgoTests" */;
+			buildPhases = (
+				D4E13B6A155107F400110792 /* Sources */,
+				D4E13B6B155107F400110792 /* Frameworks */,
+				D4E13B6C155107F400110792 /* Resources */,
+				D4E13B6D155107F400110792 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4E13B76155107F400110792 /* PBXTargetDependency */,
+			);
+			name = virgoTests;
+			productName = virgoTests;
+			productReference = D4E13B6F155107F400110792 /* virgoTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4E13B42155107F400110792 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "artmobile@gmail.com";
+			};
+			buildConfigurationList = D4E13B45155107F400110792 /* Build configuration list for PBXProject "virgo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D4E13B40155107F400110792;
+			productRefGroup = D4E13B4C155107F400110792 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4E13B4A155107F400110792 /* virgo */,
+				D4E13B6E155107F400110792 /* virgoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4E13B49155107F400110792 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4E13B5A155107F400110792 /* InfoPlist.strings in Resources */,
+				D4E13B63155107F400110792 /* MainWindow.xib in Resources */,
+				D4E13B69155107F400110792 /* virgoViewController.xib in Resources */,
+				D4E13B9D15510D6900110792 /* loginViewController.xib in Resources */,
+				D4ECBEE015527640000B08DF /* CHANGELOG.md in Resources */,
+				D4ECBEE215527640000B08DF /* README.md in Resources */,
+				D40BECA3155296870023BA79 /* createUserViewController.xib in Resources */,
+				D40BECA9155296CC0023BA79 /* forgotPasswordViewController.xib in Resources */,
+				D4440F041552AF1700CFF3B4 /* pillsViewController.xib in Resources */,
+				D4EFEAE0156BDEF900014146 /* configurationViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4E13B6C155107F400110792 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4E13B7C155107F400110792 /* InfoPlist.strings in Resources */,
+				D4E13B7E155107F400110792 /* virgoTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D4E13B6D155107F400110792 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4E13B47155107F400110792 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4E13B5C155107F400110792 /* main.m in Sources */,
+				D4E13B60155107F400110792 /* virgoAppDelegate.m in Sources */,
+				D4E13B66155107F400110792 /* virgoViewController.m in Sources */,
+				D4E13B9C15510D6900110792 /* loginViewController.m in Sources */,
+				D4E13BA415510EBB00110792 /* appView.m in Sources */,
+				D4E13BA715510EC900110792 /* loginView.m in Sources */,
+				D4E13BAE15512F6100110792 /* NSStack.m in Sources */,
+				D4ECBEE115527640000B08DF /* JSONKit.m in Sources */,
+				D4ECBEE615527668000B08DF /* SqliteHelper.m in Sources */,
+				D4ECBEF71552779A000B08DF /* Bookmark.m in Sources */,
+				D4ECBEF81552779A000B08DF /* BookmarkManager.m in Sources */,
+				D4ECBF01155277F7000B08DF /* Cipher.m in Sources */,
+				D4ECBF02155277F7000B08DF /* JsonHelper.m in Sources */,
+				D4ECBF03155277F7000B08DF /* SecureJsonChannel.m in Sources */,
+				D4ECBF061552785C000B08DF /* Base64Encoder.m in Sources */,
+				D40BECA2155296870023BA79 /* createUserViewController.m in Sources */,
+				D40BECA8155296CC0023BA79 /* forgotPasswordViewController.m in Sources */,
+				D4440EFA1552A6D800CFF3B4 /* createUserView.m in Sources */,
+				D4440EFE1552A95A00CFF3B4 /* forgotPasswordView.m in Sources */,
+				D4440F031552AF1700CFF3B4 /* pillsViewController.m in Sources */,
+				D4440F071552AF2500CFF3B4 /* pillsView.m in Sources */,
+				D4440F0F1552B13400CFF3B4 /* CustomButton.m in Sources */,
+				D4440F121552B14C00CFF3B4 /* Common.m in Sources */,
+				D4EC03BF1568D5DD0020668F /* ErrorCodes.m in Sources */,
+				D4169A701568F5180016A82B /* UserActivityManager.m in Sources */,
+				D4EFEAD9156BDEA200014146 /* configurationView.m in Sources */,
+				D4EFEADF156BDEF900014146 /* configurationViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4E13B6A155107F400110792 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4E13B80155107F400110792 /* virgoTests.m in Sources */,
+				D4EC03B71557E4C80020668F /* securityTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4E13B76155107F400110792 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4E13B4A155107F400110792 /* virgo */;
+			targetProxy = D4E13B75155107F400110792 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D4E13B58155107F400110792 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4E13B59155107F400110792 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D4E13B61155107F400110792 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4E13B62155107F400110792 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		D4E13B67155107F400110792 /* virgoViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4E13B68155107F400110792 /* en */,
+			);
+			name = virgoViewController.xib;
+			sourceTree = "<group>";
+		};
+		D4E13B7A155107F400110792 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4E13B7B155107F400110792 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D4E13B81155107F400110792 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D4E13B82155107F400110792 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D4E13B84155107F400110792 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "virgo/virgo-Prefix.pch";
+				INFOPLIST_FILE = "virgo/virgo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D4E13B85155107F400110792 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "virgo/virgo-Prefix.pch";
+				INFOPLIST_FILE = "virgo/virgo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D4E13B87155107F400110792 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/virgo.app/virgo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "virgo/virgo-Prefix.pch";
+				INFOPLIST_FILE = "virgoTests/virgoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D4E13B88155107F400110792 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/virgo.app/virgo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "virgo/virgo-Prefix.pch";
+				INFOPLIST_FILE = "virgoTests/virgoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4E13B45155107F400110792 /* Build configuration list for PBXProject "virgo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4E13B81155107F400110792 /* Debug */,
+				D4E13B82155107F400110792 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4E13B83155107F400110792 /* Build configuration list for PBXNativeTarget "virgo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4E13B84155107F400110792 /* Debug */,
+				D4E13B85155107F400110792 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4E13B86155107F400110792 /* Build configuration list for PBXNativeTarget "virgoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4E13B87155107F400110792 /* Debug */,
+				D4E13B88155107F400110792 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D4E13B42155107F400110792 /* Project object */;
+}
